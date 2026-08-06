@@ -1,16 +1,4 @@
-<!-- <template>
-    <div class="app-root" :data-theme="store.theme">
-        <main class="main-content">
-            <router-view/>
-        </main>
-        <BottomNav />
-    </div>
-</template>
-<script setup>
-import {useTasbihStore} from './stores/tasbih'
-import BottomNav from './components/BottomNav.vue'
-const store=useTasbihStore()
-</script> -->
+
 
 <template>
   <div class="app-root" :data-theme="store.theme">
@@ -31,7 +19,9 @@ const store=useTasbihStore()
 import { ref } from 'vue'
 import { useTasbihStore } from './stores/tasbih'
 import BottomNav from './components/BottomNav.vue'
-import SplashScreen from './components/SplashScreen.vue'
+// import SplashScreen from './components/SplashScreen.vue'
+
+import SplashScreen from './components/splashScreen.vue'
 
 const store = useTasbihStore()
 
