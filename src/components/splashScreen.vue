@@ -3,7 +3,7 @@
     <div class="splash-logo">
 
       <img src="../../public/chap2.jpg" alt="Wird" class="splash-img" />
-      <div class="splash-wird">CHAPELET VIRTUEL</div>
+      <div class="splash-wird"></div>
       <div class="splash-arabic"></div>
 
     </div>
