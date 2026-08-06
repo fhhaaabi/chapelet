@@ -20,7 +20,7 @@ onMounted(() => {
   setTimeout(() => {
     hiding.value = true
     setTimeout(() => emit('done'), 600)
-  }, 4500)
+  }, 3500)
 })
 </script>
 
