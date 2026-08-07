@@ -597,3 +597,14 @@ svg {
   font-family: Georgia, serif;
   color: var(--accent);
 }
+
+input,
+button,
+select,
+textarea {
+  font-size: 16px !important;
+}
+
+* {
+  touch-action: manipulation;
+}

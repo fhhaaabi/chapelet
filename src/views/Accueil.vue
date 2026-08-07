@@ -1,14 +1,13 @@
 <template>
   <div>
 
-    <!-- ── Navbar du haut ── -->
+    
     <nav class="top-navbar">
-      <!-- Logo à gauche -->
       <div class="navbar-logo">
         <span>Chapelet</span>
       </div>
 
-      <!-- Menu hamburger à droite -->
+      <!-- Menu hamburger  -->
       <div style="position:relative;">
         <button class="hamburger" @click="menuOpen = !menuOpen">
           <div></div>
