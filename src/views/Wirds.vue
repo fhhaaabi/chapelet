@@ -34,7 +34,7 @@
 
     <!-- Wirds personnalisés -->
     <template v-if="store.customWirds.length > 0">
-      <div class="section-label">MES WIRDS PERSONNALISÉS</div>
+      <div class="section-label">MES AZKARS PERSONNALISÉS</div>
       <div class="d-flex flex-column gap-2 mb-4">
         <div v-for="w in store.customWirds" :key="w.id" class="wird-card"
           :style="{
@@ -66,12 +66,12 @@
     <!-- Bouton ajouter -->
     <button v-if="!showForm" class="btn-add-wird" @click="showForm = true">
       <span style="font-size:1.3rem;">+</span>
-      Ajouter un Wird personnalisé
+      Ajouter un Azkar personnalisé
     </button>
 
     <!-- Formulaire ajout -->
     <div v-else class="add-form">
-      <div class="section-label mb-3">NOUVEAU WIRD</div>
+      <div class="section-label mb-3">NOUVEAU AZKAR</div>
 
       <input class="form-input arabic-input"
         placeholder="Texte arabe  (ex: بسم الله)"
