@@ -54,8 +54,8 @@ onMounted(() => {
   object-fit: cover;
   border-radius: 50%;
   /* border: 3px solid #d4a544; */
-  box-shadow: 0 0 60px rgba(212, 165, 68, 0.4);
-  animation: fadeIn 1s ease;
+  /* box-shadow: 0 0 60px rgba(212, 165, 68, 0.4);
+  animation: fadeIn 1s ease; */
 }
 
 .splash-wird {
