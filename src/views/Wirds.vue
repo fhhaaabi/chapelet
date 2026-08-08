@@ -2,12 +2,12 @@
   <div class="page-pad" style="padding-top:24px;padding-bottom:24px;">
 
     <div class="mb-4">
-      <h1 class="page-title">Mes Wirds</h1>
-      <p class="page-subtitle">Sélectionne un wird ou crée le tien</p>
+      <h1 class="page-title">Mes Azkars</h1>
+      <p class="page-subtitle">Sélectionne un Azkar ou crée le tien</p>
     </div>
 
     <!-- Wirds par défaut -->
-    <div class="section-label" style="font-size: 0.9rem;" >WIRDS PAR DÉFAUT</div>
+    <div class="section-label" style="font-size: 0.9rem;" >AZKARS PAR DÉFAUT</div>
     <div class="d-flex flex-column gap-2 mb-4">
       <div v-for="w in DEFAULT_WIRDS" :key="w.id" class="wird-card"
         :style="{
