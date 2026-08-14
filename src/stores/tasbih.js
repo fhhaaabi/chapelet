@@ -104,7 +104,12 @@ export const useTasbihStore = defineStore("tasbih", {
     deleteWird(id) {
       this.customWirds = this.customWirds.filter((w) => w.id !== id);
       localStorage.setItem("customWirds", JSON.stringify(this.customWirds));
-      if (this.activeWirdId === id) this.selectWird(1);
+      if (this.activeWirdId === id) {
+        this.activeWirdId = null;
+        localStorage.setItem("activeWirdId", JSON.stringify(null));
+        this.count = 0;
+        this.done = false;
+      }
     },
 
     setTheme(t) {

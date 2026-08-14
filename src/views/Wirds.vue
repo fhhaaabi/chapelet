@@ -144,7 +144,7 @@ const PALETTE  = ['#4ade80','#60a5fa','#fbbf24','#c084fc','#fb7185','#34d399','#
 const emptyForm = () => ({ arabic: '', label: '', translation: '', target: 33, color: '#d4a544' })
 const form = ref(emptyForm())
 
-const isActive = (w) => store.activeWird.id === w.id
+const isActive = (w) => store.activeWird?.id === w.id
 
 function choisir(id) {
   store.selectWird(id)
