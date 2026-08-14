@@ -23,7 +23,7 @@ export const DEFAULT_WIRDS = [
     arabic: "اللَّهُ أَكْبَرُ",
     label: "Allahu Akbar",
     translation: "Allah est le Plus Grand",
-    target: 34,
+    target: 33,
     color: "#fbbf24",
   },
   {
@@ -31,7 +31,7 @@ export const DEFAULT_WIRDS = [
     arabic: "أَسْتَغْفِرُ اللَّهَ",
     label: "Astaghfirullah",
     translation: "Je demande pardon à Allah",
-    target: 33,
+    target: 101,
     color: "#c084fc",
   },
   {
@@ -57,7 +57,7 @@ function load(key, fallback) {
 export const useTasbihStore = defineStore("tasbih", {
   state: () => ({
     customWirds: load("customWirds", []),
-    activeWirdId: load("activeWirdId", 1),
+    activeWirdId: load("activeWirdId", null),
     count: 0,
     done: false,
     theme: localStorage.getItem("theme") || "nuit",
@@ -69,8 +69,9 @@ export const useTasbihStore = defineStore("tasbih", {
   getters: {
     allWirds: (state) => [...DEFAULT_WIRDS, ...state.customWirds],
     activeWird: (state) => {
+      if (!state.activeWirdId) return null;
       const all = [...DEFAULT_WIRDS, ...state.customWirds];
-      return all.find((w) => w.id === state.activeWirdId) || DEFAULT_WIRDS[0];
+      return all.find((w) => w.id === state.activeWirdId) || null;
     },
   },
 
@@ -78,7 +79,9 @@ export const useTasbihStore = defineStore("tasbih", {
     tap() {
       if (this.done) return;
       this.count++;
-      if (this.count >= this.activeWird.target) this.done = true;
+      if (this.activeWird && this.count >= this.activeWird.target) {
+        this.done = true;
+      }
     },
 
     reset() {

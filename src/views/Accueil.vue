@@ -40,25 +40,25 @@
       </div>
 
       <!-- Wird actif — clique pour changer -->
-      <router-link to="/wirds" class="wird-chip mb-3"
+    <router-link to="/wirds" class="wird-chip mb-3"
         :style="{
-          border: `1.5px solid ${activeWird.color}55`,
-          background: activeWird.color + '15',
-          color: activeWird.color
-        }">
-        {{ activeWird.label }} · {{ activeWird.target }}× ›
-      </router-link>
+         border: activeWird ? `1.5px solid ${activeWird.color}55` : '1.5px solid #d4a54455',
+          background: activeWird ? activeWird.color + '15' : '#d4a54415',
+         color: activeWird ? activeWird.color : '#d4a544'
+      }">
+         {{ activeWird ? activeWird.label + ' · ' + activeWird.target + '×' : 'Choisir un wird' }} ›
+       </router-link>
 
       <!-- Texte arabe du dhikr -->
-      <div class="text-center mb-2">
-        <div class="arabic-dhikr"
-          :style="{ color: done ? 'var(--accent)' : activeWird.color }">
-          {{ activeWird.arabic }}
+         <div class="text-center mb-2">
+          <div class="arabic-dhikr"
+          :style="{ color: done ? 'var(--accent)' : activeWird ? activeWird.color : '#d4a544' }">
+           {{ activeWird ? activeWird.arabic : 'اللَّهُ' }}
         </div>
-        <div v-if="activeWird.translation" class="dhikr-transl">
-          {{ activeWird.translation }}
-        </div>
+        <div class="dhikr-transl">
+         {{ activeWird ? activeWird.translation : 'Appuie librement' }}
       </div>
+     </div>
 
       <!-- ── SVG Chapelet ── -->
       <svg width="300" height="300" style="display:block;margin-bottom:14px;">
@@ -120,8 +120,9 @@
             font-weight="200">{{ count }}</text>
           <text :x="CX" :y="CY + 22"
             text-anchor="middle"
-            fill="var(--muted)"
-            font-size="11">/ {{ activeWird.target }}</text>
+            fill="var(--muted)" font-size="11">
+           {{ activeWird ? '/ ' + activeWird.target : 'libre' }}
+          </text>
           <text v-if="cycle > 0"
             :x="CX" :y="CY + 40"
             text-anchor="middle"
@@ -156,7 +157,7 @@
           <div class="done-badge"
             style="background:linear-gradient(135deg,var(--accent),#b8860b);
                    box-shadow:0 0 28px rgba(212,165,68,.4);">
-            ✓ {{ activeWird.label }} complété
+            ✓ {{ activeWird.label }} compléte
           </div>
           <button class="btn-secondary" @click="store.reset()">
             ↺ Recommencer
