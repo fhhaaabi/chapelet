@@ -5,6 +5,24 @@
       <h1 class="page-title">Mes Azkars</h1>
       <p class="page-subtitle">Sélectionne un Azkar ou crée le tien</p>
     </div>
+    <!-- Bouton réinitialiser le choix -->
+<div class="mb-4">
+  <button @click="reinitialiser" class="btn-reinit-wird"
+    :style="{
+      width: '100%',
+      padding: '12px',
+      borderRadius: '14px',
+      border: '1.5px solid var(--border)',
+      background: !store.activeWird ? 'var(--accent)' : 'transparent',
+      color: !store.activeWird ? '#080d14' : 'var(--muted)',
+      cursor: 'pointer',
+      fontSize: '0.88rem',
+      fontWeight: !store.activeWird ? '700' : '400',
+      transition: 'all 0.2s'
+    }">
+    {{ !store.activeWird ? '✓ Mode libre (actif)' : '↺ Revenir au mode libre' }}
+  </button>
+</div>
 
     <!-- Wirds par défaut -->
     <div class="section-label" style="font-size: 0.9rem;" >AZKARS PAR DÉFAUT</div>
@@ -160,5 +178,12 @@ function enregistrer() {
 function annuler() {
   form.value = emptyForm()
   showForm.value = false
+}
+function reinitialiser() {
+  store.activeWirdId = null
+  localStorage.setItem('activeWirdId', JSON.stringify(null))
+  store.count = 0
+  store.done = false
+  router.push('/')
 }
 </script>

@@ -174,7 +174,7 @@ const done       = computed(() => store.done)
 
 // ── Helpers sécurisés ─────────────────────────────────
 const wirdColor       = computed(() => activeWird.value?.color       || '#d4a544')
-const wirdArabic      = computed(() => activeWird.value?.arabic      || 'اللَّهُ')
+const wirdArabic      = computed(() => activeWird.value?.arabic      || '')
 const wirdLabel       = computed(() => activeWird.value?.label       || '')
 const wirdTarget      = computed(() => activeWird.value?.target      || null)
 const wirdTranslation = computed(() => activeWird.value?.translation || 'Appuie librement')
